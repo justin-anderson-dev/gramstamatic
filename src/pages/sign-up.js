@@ -6,21 +6,16 @@ import * as ROUTES from '../constants/routes';
 import { doesUsernameExist } from '../services/firebase.js';
 
 export default function Signup() {
-  // eslint-disable-next-line
   const history = useHistory();
-  // eslint-disable-next-line
   const { firebase } = useContext(FirebaseContext);
   const [userName, setUserName] = useState('');
   const [fullName, setFullName] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
 
-  // eslint-disable-next-line
   const [error, setError] = useState('');
-  // eslint-disable-next-line
   const isInvalid = password === '' || emailAddress === '' || userName === '' || fullName === '';
 
-  // TODO: firebase calls, including check for duplication
   const handleSignup = async (event) => {
     event.preventDefault();
 
