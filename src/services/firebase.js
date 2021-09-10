@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { firebase } from '../lib/firebase';
 
 export async function doesUsernameExist(username) {
@@ -12,4 +11,19 @@ export async function doesUsernameExist(username) {
     return result.docs.length > 0;
   }
   return false;
+}
+
+export async function getUserById(userId) {
+  const result = await firebase
+    .firestore()
+    .collection('users')
+    .where('userId', '==', userId)
+    .get();
+
+  const user = result.docs.map((item) => ({
+    ...item.data(), 
+    docId: item.id
+  }));
+
+  return user;
 }
