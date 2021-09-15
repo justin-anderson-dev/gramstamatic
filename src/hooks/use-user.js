@@ -10,7 +10,7 @@ export default function useUser() {
     async function getUserDataByUID(userId) {
       // pass UID to firebase service, add response object to state
       const [response] = await getUserById(userId); 
-      setActiveUser(response || {});
+      setActiveUser(response);
     }
     if (user?.uid) {
       getUserDataByUID(user.uid);

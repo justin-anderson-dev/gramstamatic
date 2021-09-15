@@ -7,12 +7,12 @@ export default function Sidebar() {
   // console.log(`user --> ${JSON.stringify(user)}`);
 
   return (
-    <div className="p-4">
+    <div className="md:block p-4 border border-gray-primary">
       <User 
         username={user.username} 
         fullName={user.fullName} 
       />
-      <Suggestions userId={user.userId}/>
+      <Suggestions userId={user.userId} following={user.following}/>
     </div>
   );
-}
+};
