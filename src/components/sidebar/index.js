@@ -12,7 +12,7 @@ export default function Sidebar() {
         username={user.username} 
         fullName={user.fullName} 
       />
-      <Suggestions userId={user.userId} following={user.following}/>
+      <Suggestions userId={user.userId} following={user.following} loggedInUserDocId={user.docId}/>
     </div>
   );
 };
