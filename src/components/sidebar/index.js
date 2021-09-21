@@ -7,7 +7,7 @@ export default function Sidebar() {
   // console.log(`user --> ${JSON.stringify(user)}`);
 
   return (
-    <div className="md:block p-4 border border-gray-primary">
+    <div className="hidden lg:block p-4">
       <User 
         username={user.username} 
         fullName={user.fullName} 
