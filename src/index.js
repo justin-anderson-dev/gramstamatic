@@ -16,12 +16,3 @@ ReactDOM.render(
   // -> react-loading-skeleton
   // -> tailwind
 
-// src
-  // -> components
-  // -> constants
-  // -> context
-  // -> helpers
-  // -> hooks
-  // -> lib (firebase here)
-  // -> services (firebase functions here)
-  // -> styles (tailwind folder: app / tailwind)
