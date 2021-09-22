@@ -13,6 +13,19 @@ export async function doesUsernameExist(username) {
   return false;
 };
 
+export async function getUserByUsername(username) {
+  const response = await firebase
+    .firestore()
+    .collection('users')
+    .where('username', '==', username)
+    .get();
+
+  return response.docs.map((item) => ({
+    ...item.data(),
+    docId: item.id
+  }));
+};
+
 export async function getUserById(userId) {
   const result = await firebase
     .firestore()
@@ -77,4 +90,17 @@ export async function getPhotos(userId, following) {
   );
 
   return photosWithUserDetails;
-}
+};
+
+export async function getUserPhotosById(userId) {
+  const response = await firebase
+    .firestore()
+    .collection('photos')
+    .where('userId', '==', userId)
+    .get();
+
+    return response.docs.map((photo) => ({
+      ...photo.data(),
+      docId: photo.id
+    }));
+};

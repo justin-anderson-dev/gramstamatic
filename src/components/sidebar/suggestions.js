@@ -9,15 +9,17 @@ export default function Suggestions({ userId, following, loggedInUserDocId }) {
 
   // get suggested profiles using the fireBase service
   useEffect(() => {
+    let isMounted = true;
     async function suggestedProfiles() {
       const response = await getSuggestedProfiles(userId, following);
-      setProfiles(response);
+      if (isMounted) setProfiles(response);
     };
 
     if (userId) {
       suggestedProfiles();
     }
-
+    
+    return () => isMounted = false ;
   }, [userId, following]);
 
   return !profiles ? (

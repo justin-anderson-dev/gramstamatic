@@ -76,8 +76,11 @@ export default function Signup() {
       <div className="flex flex-col w-2/5">
         <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
           <h1 className="flex justify-center w-full">
-            <img src="/images/NewLogoAlpha.png" alt="Instagram logo" className="mt-2 w-6/12 mb-4" />
+            <img src="/images/NewLogoAlpha.png" alt="Gramm Fans logo" className="mt-2 w-6/12 mb-4" />
           </h1>
+          <h3 className="text-sm justify-center w-64 mb-4">
+            Share photos with friends -- <em>without</em> giving all your data to Zuckerberg!
+          </h3>
 
           {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
 

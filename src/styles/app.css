@@ -341,6 +341,12 @@ ul {
   padding: 0;
 }
 
+/* Focusing the button with a mouse, touch, or stylus will show a subtle drop shadow instead of the current focus style. */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: 1px 1px 2px rgba(1, 1, 0, .7);
+}
+
 /**
  * Tailwind custom reset styles
  */

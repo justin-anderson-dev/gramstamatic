@@ -4,7 +4,6 @@ import Suggestions from './suggestions';
 
 export default function Sidebar() {
   const { user } = useUser();
-  // console.log(`user --> ${JSON.stringify(user)}`);
 
   return (
     <div className="hidden lg:block p-4">

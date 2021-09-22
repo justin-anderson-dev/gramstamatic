@@ -14,7 +14,6 @@ export default function SuggestedProfile({
 
   async function handleFollow() {
     setFollowed(true);
-    // console.log(`now following ${username}!`);
     // add profileId to 'following' array for logged-in user(userId) -> need docId
     await addFollowing(loggedInUserDocId, profileId);
     // add userId to 'followers' array for followed user(profileId) -> userDocId

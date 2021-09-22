@@ -1,15 +1,40 @@
 import '../styles/app.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
+import { getUserByUsername } from '../services/firebase';
+import * as ROUTES from '../constants/routes';
+
+import Header from '../components/header';
+import UserProfile from '../components/profile';
 
 export default function Profile() {
+  const { username } = useParams();
+  const [user, setUser] = useState(null);
+  const history = useHistory();
+
   useEffect(() => {
     document.title = 'Profile - Gramm.fans';
   }, []);
-  return (
+
+  useEffect(() => {
+    async function checkUserExists() {
+      const [user] = await getUserByUsername(username);
+      if (user) {
+        setUser(user);
+      } else {
+        history.push(ROUTES.NOT_FOUND);
+      }
+    }
+
+    checkUserExists();
+  }, [username, history]);
+
+  return user?.username ? (
     <div className="bg-gray-background">
+      <Header />
       <div className="mx-auto max-w-screen-lg">
-        <p className="text-center text-2xl">I am the Profile page!</p>
+        <UserProfile user={user}/>
       </div>
     </div>
-  );
+  ) : null;
 }
