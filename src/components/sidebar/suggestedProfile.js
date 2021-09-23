@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { addFollower, addFollowing } from '../../services/firebase';
+import { updateFollowers, updateFollowing } from '../../services/firebase';
 
 export default function SuggestedProfile({ 
     suggProfDocId, 
@@ -15,9 +15,9 @@ export default function SuggestedProfile({
   async function handleFollow() {
     setFollowed(true);
     // add profileId to 'following' array for logged-in user(userId) -> need docId
-    await addFollowing(loggedInUserDocId, profileId);
+    await updateFollowing(loggedInUserDocId, profileId, false);
     // add userId to 'followers' array for followed user(profileId) -> userDocId
-    await addFollower(suggProfDocId, userId);
+    await updateFollowers(suggProfDocId, userId, false);
   }
 
   return !followed ? (

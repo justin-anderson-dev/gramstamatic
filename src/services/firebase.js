@@ -49,20 +49,28 @@ export async function getSuggestedProfiles(userId, following) {
     .filter((profile) => profile.userId !== userId && !following.includes(profile.userId));
 };
 
-export async function addFollower(docId, newFollowerId) {
+export async function updateFollowers(profileId, newFollowerId, isFollowingProfile = false) {
   return firebase
     .firestore()
     .collection('users')
-    .doc(docId)
-    .update({followers: FieldValue.arrayUnion(newFollowerId)})
+    .doc(profileId)
+    .update({
+      followers: isFollowingProfile 
+        ? FieldValue.arrayRemove(newFollowerId)
+        : FieldValue.arrayUnion(newFollowerId)
+    });
 };
 
-export async function addFollowing(newFollowerDocId, profileId) {
+export async function updateFollowing(newFollowerDocId, profileId, isFollowingProfile = false) {
   return firebase
     .firestore()
     .collection('users')
     .doc(newFollowerDocId)
-    .update({following: FieldValue.arrayUnion(profileId)});
+    .update({
+      following: isFollowingProfile
+      ? FieldValue.arrayRemove(profileId)
+      : FieldValue.arrayUnion(profileId)
+    });
 };
 
 export async function getPhotos(userId, following) {
@@ -104,3 +112,8 @@ export async function getUserPhotosById(userId) {
       docId: photo.id
     }));
 };
+
+export async function updateToggleFollow(isFollowing, followerDocId, followerUserId, profileDocId, profileUserId) {
+  await updateFollowers(profileDocId, followerUserId, isFollowing);
+  await updateFollowing(followerDocId, profileUserId, isFollowing);
+}
