@@ -26,9 +26,7 @@ export default function ProfileHeader({
 
   const handleToggleFollow = async () => {
     setIsFollowingProfile((isFollowingProfile) => !isFollowingProfile);
-    setFollowerCount({
-      followerCount: isFollowingProfile ? followerCount - 1 : followerCount + 1
-    });
+    setFollowerCount(isFollowingProfile ? followerCount - 1 : followerCount + 1);
     await updateToggleFollow(isFollowingProfile, user.docId, profileDocId, profileUserId, user.userId);
   };
 
@@ -93,12 +91,6 @@ export default function ProfileHeader({
         <div className="container mt-4">
           <p className="font-medium">{!profileFullName ? <Skeleton count={1} height={24} /> : profileFullName}</p>
         </div>
-      </div>
-      <div>
-        <p>REFERENCE DATA</p>
-        <p>User ID {profileUserId} {profileFullName}&apos;s Profile</p>
-        <p>logged in user object from UserContext -&gt; {JSON.stringify(loggedInUser)} </p>
-        <p>logged in user object from useUser hook -&gt; {JSON.stringify(user)} </p>
       </div>
     </div>
   );

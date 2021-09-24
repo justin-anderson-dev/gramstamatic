@@ -21,7 +21,7 @@ export default function Timeline() {
     // if photos load, render them in Post components
         photos.map((content) => <Post key={content.docId} content={content} />)
       ) : (
-        <p className="text-center text-2xl">Follow some folks to see photos in your Timeline</p>
+        <p className="text-center text-2xl">Follow more people to see more photos in your Timeline!</p>
       )}
     </div>
     // TODO: if no photos, tell user to follow some people to get photos

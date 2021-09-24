@@ -5,7 +5,14 @@ import Timeline from '../components/timeline';
 
 export default function Dashboard() {
   useEffect(() => {
-    document.title = 'Gramm.fans';
+    let mounted = true;
+    if (mounted) {
+      document.title = 'Gramm.fans';
+    }
+
+    return function cleanup() {
+      mounted = false
+    }
   }, []);
 
   return(

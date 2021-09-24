@@ -9,7 +9,7 @@ import * as ROUTES from '../constants/routes';
 export default function Header() {
   const { firebase } = useContext(FirebaseContext);
   const { user: loggedInUser } = useContext(UserContext);
-  const { user } = useUser(loggedInUser);
+  const { user } = useUser(loggedInUser?.uid);
   const history = useHistory();
 
   return (

@@ -36,17 +36,17 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="container flex mx-auto max-w-screen-lg items-center h-screen p-1">
-      <div className="flex w-3/5">
-        <img src="/images/iphone-1.jpg" alt="iPhone with Instagram profile" />
+    <div className="container flex flex-col lg:flex-row mx-auto max-w-screen-md items-center h-screen px-4 lg:px-0">
+      <div className="hidden lg:flex w-5/5 lg:w-3/5">
+        <img src="/images/iphone-1.jpg" alt="iPhone with Gramstamatic profile" />
       </div>
-      <div className="flex flex-col w-2/5">
+      <div className="flex flex-col w-full lg:w-2/5 justify-center h-full max-w-md m-auto">
         <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
           <h1 className="flex justify-center w-full">
             <img
               src="/images/NewLogoAlpha.png"
-              alt="Gramm.Fans logo"
-              className="mt-2 w-6/12 mb-4"
+              alt="Gramstamatic"
+              className="mt-2 mb-4"
             />
           </h1>
 

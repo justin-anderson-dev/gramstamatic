@@ -113,7 +113,7 @@ export async function getUserPhotosById(userId) {
     }));
 };
 
-export async function updateToggleFollow(isFollowing, followerDocId, followerUserId, profileDocId, profileUserId) {
-  await updateFollowers(profileDocId, followerUserId, isFollowing);
+export async function updateToggleFollow(isFollowing, followerDocId, profileDocId, profileUserId, followerUserId) {
   await updateFollowing(followerDocId, profileUserId, isFollowing);
-}
+  await updateFollowers(profileDocId, followerUserId, isFollowing);
+};

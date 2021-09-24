@@ -6,7 +6,7 @@ import UserContext from '../../context/user';
 
 export default function Sidebar() {
   const { user: loggedInUser } = useContext(UserContext);
-  const { user } = useUser(loggedInUser);
+  const { user } = useUser(loggedInUser?.uid);
 
   return (
     <div className="hidden lg:block p-4">
