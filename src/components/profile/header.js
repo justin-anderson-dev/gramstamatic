@@ -2,9 +2,9 @@
 import { useState, useEffect, useContext } from "react";
 import PropTypes from 'prop-types';
 import Skeleton from "react-loading-skeleton";
-import useUser from "../../hooks/use-user";
+import useUser from "../../utils/hooks/use-user";
 import UserContext from "../../context/user";
-import { updateToggleFollow } from "../../services/firebase";
+import { updateToggleFollow } from "../../utils/firebase";
 
 export default function ProfileHeader({ 
   photosCount, 
@@ -41,7 +41,7 @@ export default function ProfileHeader({
           <img 
             className="rounded-full h-16 w-16 md:h-20 lg:h-40 md:w-20 lg:w-40 flex"
             alt={`${profileUsername} profile picture`}
-            src={`/images/avatars/${profileUsername}.jpg`}  
+            src={`https://gramstamatic-pics.s3.us-west-1.amazonaws.com/avatars/${profileUsername}.jpg`}  
           />
         ) : (
           <img 

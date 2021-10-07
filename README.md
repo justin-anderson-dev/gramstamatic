@@ -1,4 +1,4 @@
-# GrammFans Documentation
+# Gramstamatic Documentation
 
-- To be hosted at gramm.fans
+- To be hosted at gramstamatic.com
 

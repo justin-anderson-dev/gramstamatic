@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { updateFollowers, updateFollowing } from '../../services/firebase';
+import { updateFollowers, updateFollowing } from '../../utils/firebase';
 
 export default function SuggestedProfile({ 
     suggProfDocId, 
@@ -26,7 +26,7 @@ export default function SuggestedProfile({
         <div className="flex items-center justify-between">
           <img
             className="rounded-full w-8 flex mr-3"
-            src={`/images/avatars/${username}.jpg`}
+            src={`https://gramstamatic-pics.s3.us-west-1.amazonaws.com/avatars/${username}.jpg`}
             alt=""
           />
           <p className="font-bold text-sm">{username}</p>

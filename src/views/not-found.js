@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = 'Not Found - Gramm.fans';
+    document.title = 'Not Found - Gramstamatic';
   }, []);
   return (
     <div className="bg-gray-background">

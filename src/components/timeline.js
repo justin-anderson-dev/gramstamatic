@@ -1,12 +1,14 @@
 import Skeleton from 'react-loading-skeleton';
-import usePhotos from '../hooks/use-photos';
+import usePhotos from '../utils/hooks/use-photos';
 import Post from './post';
+import { useContext } from 'react';
+import LoggedInUserContext from '../context/user';
 
 export default function Timeline() {
-  // const { user } = useContext(UserContext);
+  const { user } = useContext(LoggedInUserContext);
 
   // get photos from profiles that logged-in user follows
-  const { photos } = usePhotos();
+  const { photos } = usePhotos(user);
   // console.log('photos', photos);
   
   return (
@@ -24,6 +26,5 @@ export default function Timeline() {
         <p className="text-center text-2xl">Follow more people to see more photos in your Timeline!</p>
       )}
     </div>
-    // TODO: if no photos, tell user to follow some people to get photos
   );
 }

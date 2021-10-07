@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import '../styles/app.css';
-import * as ROUTES from '../constants/routes';
+import * as ROUTES from '../utils/constants/routes';
 
 export default function Login() {
   // eslint-disable-next-line
@@ -32,7 +32,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    document.title = 'Login - Gramm.fans';
+    document.title = 'Login - Gramstamatic';
   }, []);
 
   return (
@@ -44,7 +44,7 @@ export default function Login() {
         <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
           <h1 className="flex justify-center w-full">
             <img
-              src="/images/NewLogoAlpha.png"
+              src="/images/new-NewLogoAlpha.png"
               alt="Gramstamatic"
               className="mt-2 mb-4"
             />

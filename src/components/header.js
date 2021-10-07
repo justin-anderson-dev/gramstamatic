@@ -3,8 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from "../context/firebase";
 import '../styles/app.css';
 import UserContext from "../context/user";
-import useUser from "../hooks/use-user";
-import * as ROUTES from '../constants/routes';
+import useUser from "../utils/hooks/use-user";
+import * as ROUTES from '../utils/constants/routes';
 
 export default function Header() {
   const { firebase } = useContext(FirebaseContext);
@@ -18,8 +18,8 @@ export default function Header() {
        <div className="flex justify-between h-full">
          <div className="text-gray-700 text-center flex items-center align-items cursor-pointer">
           <h1 className="flex justify-center w-full">
-            <Link to={ROUTES.DASHBOARD} aria-label="Gramm.fans logo">
-              <img src="/images/NewLogoAlpha.png" alt="Gramm.fans logo" className="mt-2 w-6/12 max-h-12" />
+            <Link to={ROUTES.DASHBOARD} aria-label="Gramstamatic logo">
+              <img src="/images/new-NewLogoAlpha.png" alt="Gramstamatic logo" className="mt-2 w-6/12 max-h-12" />
             </Link>
           </h1>
          </div>
@@ -77,7 +77,7 @@ export default function Header() {
                   <Link to={`/p/${user?.username}`}>
                     <img
                       className="rounded-full h-8 w-8 flex"
-                      src={`/images/avatars/${user?.username}.jpg`}
+                      src={`https://gramstamatic-pics.s3.us-west-1.amazonaws.com/avatars/${user?.username}.jpg`}
                       alt={`${user?.username} profile`}
                     />
                   </Link>

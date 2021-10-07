@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ProfileHeader from './header';
 import Photos from './photos';
-import { getUserPhotosById } from '../../services/firebase';
+import { getUserPhotosById } from '../../utils/firebase';
 
 export default function UserProfile({ user }) {
   const [profile, setProfile] = useState(user);

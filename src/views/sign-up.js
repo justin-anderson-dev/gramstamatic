@@ -2,8 +2,8 @@ import { useState, useContext, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import '../styles/app.css';
-import * as ROUTES from '../constants/routes';
-import { doesUsernameExist } from '../services/firebase.js';
+import * as ROUTES from '../utils/constants/routes';
+import { doesUsernameExist } from '../utils/firebase.js';
 
 export default function Signup() {
   const history = useHistory();
@@ -22,7 +22,6 @@ export default function Signup() {
     const usernameExists = await doesUsernameExist(userName);
 
     if (!usernameExists) {
-      // console.log('no username here, no sir');
       try {
         const newUser = await firebase
           .auth()
@@ -43,7 +42,7 @@ export default function Signup() {
             fullName,
             emailAddress: emailAddress.toLowerCase(),
             followers: [],
-            following: ['2'],
+            following: [],
             dateCreated: Date.now()
           });
 
@@ -65,18 +64,22 @@ export default function Signup() {
   };
 
   useEffect(() => {
-    document.title = 'Sign Up - Gramm.fans';
+    document.title = 'Sign Up - Gramstamatic';
   }, []);
 
   return (
-    <div className="container flex mx-auto max-w-screen-lg items-center h-screen p-1">
-      <div className="flex w-3/5">
-        <img src="/images/iphone-1.jpg" alt="iPhone with Gramm.Fans profile" />
+    <div className="container flex mx-auto max-w-screen-md items-center h-screen px-4 lg:px-0">
+      <div className="hidden lg:flex w-full lg:w-3/5">
+        <img 
+          src="/images/iphone-1.jpg" 
+          alt="iPhone with Gramstamatic profile" 
+          className="object-scale-down"  
+        />
       </div>
-      <div className="flex flex-col w-2/5">
+      <div className="flex flex-col w-full lg:w-2/5 justify-center h-full max-w-md m-auto">
         <div className="flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded">
           <h1 className="flex justify-center w-full">
-            <img src="/images/NewLogoAlpha.png" alt="Gramm Fans logo" className="mt-2 w-6/12 mb-4" />
+            <img src="/images/new-NewLogoAlpha.png" alt="Gramstamatic logo" className="mt-2 mb-4 object-scale-down" />
           </h1>
           <h3 className="text-sm justify-center w-64 mb-4">
             Share photos with friends -- <em>without</em> giving all your data to Zuckerberg!

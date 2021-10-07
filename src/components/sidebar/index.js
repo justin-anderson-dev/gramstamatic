@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import useUser from '../../hooks/use-user';
+import useUser from '../../utils/hooks/use-user';
 import User from './user';
 import Suggestions from './suggestions';
 import UserContext from '../../context/user';
@@ -14,7 +14,7 @@ export default function Sidebar() {
         username={user?.username} 
         fullName={user?.fullName} 
       />
-      <Suggestions userId={user.userId} following={user.following} loggedInUserDocId={user.docId}/>
+      <Suggestions userId={user?.userId} following={user?.following} loggedInUserDocId={user?.docId}/>
     </div>
   );
 };
