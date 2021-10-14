@@ -6,7 +6,6 @@ import useUser from '../utils/hooks/use-user';
 import LoggedInUserContext from '../context/logged-in-user';
 import PropTypes from 'prop-types';
 
-// TODO: why is no user object being passed to Dashboard as a prop?
 export default function Dashboard( { user: activeUser }) {
   const user = useUser(activeUser.uid);
 
