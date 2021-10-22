@@ -8,8 +8,6 @@ Share photos with your friends, without handing all your sensitive data over to 
 
 This implementation began as the output from a TailwindCSS tutorial. I connected it to a Firebase backend. Right now it includes working login and signup functions...
 
-<img width="1520" alt="gramstamatic-login" src="https://user-images.githubusercontent.com/42009003/138523640-9ef3c75f-2d6c-4fdb-a213-b15aeed36228.png">
-
 <img width="1520" alt="gramstamatic-signup" src="https://user-images.githubusercontent.com/42009003/138523679-80510ade-fbd4-47db-af78-a3e1df5cb1dc.png">
 
 The app also provides the ability to follow other accounts...
