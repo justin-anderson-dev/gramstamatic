@@ -9,7 +9,6 @@ export default function Timeline() {
 
   // get photos from profiles that logged-in user follows
   const { photos } = usePhotos(user);
-  // console.log('photos', photos);
   
   return (
     <div className="col-span-3 lg:col-span-2">

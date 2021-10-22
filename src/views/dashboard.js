@@ -10,14 +10,7 @@ export default function Dashboard( { user: activeUser }) {
   const user = useUser(activeUser.uid);
 
   useEffect(() => {
-    // let mounted = true;
-    // if (mounted) {
-      document.title = 'Gramstamatic';
-    // }
-
-    // return function cleanup() {
-    //   mounted = false
-    // }
+    document.title = 'Gramstamatic';
   }, []);
 
   return(

@@ -50,11 +50,3 @@ Suggestions.propTypes = {
   following: PropTypes.array,
   loggedInUserDocId: PropTypes.string
 };
-
-/**
- * How do I expect this component to function?
- * load some kind of predetermined list of users 
- * check each to see if it's included in the logged-in user's "following" list
- * if not, render to Suggestions component
- * suggested follow includes a button that adds the suggestion to logged-in user's "following" list on firebase, then re-retrieves the user info as the login button does
- */

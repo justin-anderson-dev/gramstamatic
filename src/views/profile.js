@@ -9,8 +9,6 @@ import UserProfile from '../components/profile';
 
 export default function Profile() {
   const { username } = useParams();
-  // TODO: figure out why change in URL param is not triggering re-render of UserProfile component. Username value from useEffect has changed. Shouldn't that trigger a re-render?
-  // Something to do with ROUTES - already routed to ROUTES.PROFILE, unlike other cases
 
   const [user, setUser] = useState(null);
   const history = useHistory();
