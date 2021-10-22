@@ -8,26 +8,24 @@ Share photos with your friends, without handing all your sensitive data over to 
 
 This implementation began as the output from a TailwindCSS tutorial. I connected it to a Firebase backend. Right now it includes working login and signup functions...
 
-LOGIN IMAGE TK
+<img width="1520" alt="gramstamatic-login" src="https://user-images.githubusercontent.com/42009003/138523640-9ef3c75f-2d6c-4fdb-a213-b15aeed36228.png">
 
-SIGNUP IMAGE TK
+<img width="1520" alt="gramstamatic-signup" src="https://user-images.githubusercontent.com/42009003/138523679-80510ade-fbd4-47db-af78-a3e1df5cb1dc.png">
 
 The app also provides the ability to follow other accounts...
 
-PROFILE GALLERY IMAGE 
+<img width="1520" alt="gramstamatic-profile-gallery" src="https://user-images.githubusercontent.com/42009003/138523704-405ffb32-d866-4476-9758-6032f919c827.png">
 
-FEED IMAGE
+<img width="1520" alt="gramstamatic-feed" src="https://user-images.githubusercontent.com/42009003/138523746-be840d19-ec69-4ec4-a505-d072e2627e1e.png">
 
 ... and to like and comment on photos.
 
-DETAIL IMAGE
+<img width="1520" alt="gramstamatic-post-detail" src="https://user-images.githubusercontent.com/42009003/138523838-58268139-992e-4ea7-88f0-e653811608d3.png">
 
 It also features a viewport-responsive layout.
 
-RESPONSIVE IMAGE 1
-
-RESPONSIVE IMAGE 2
-
+<img width="499" alt="gramstamatic-responsive1" src="https://user-images.githubusercontent.com/42009003/138523853-3aa10604-646d-4b86-8aa1-9e3a61f5949a.png">
+<img width="495" alt="gramstamatic-responsive2" src="https://user-images.githubusercontent.com/42009003/138523870-e5d98476-634a-4e4d-a488-3d8de48ae6f7.png">
 
 See [Roadmap](#Roadmap) below for planned upgrades.
 
